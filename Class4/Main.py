@@ -19,5 +19,18 @@ while True:
             writeFile.write("\n"+text)
     
     if option == 3 :
-        with open(journal,"w")as RFile :
-            RFile.write("")
+        indexRemove = int(input("Enter the LINE NUMBER you want to remove. ")) - 1
+        with open(journal,"r")as removeFile :
+            lines = removeFile.readlines()
+            lines.pop(indexRemove)
+            print(lines)
+
+        with open(journal,"w")as writeMode:
+            for i in lines:
+                writeMode.write(i)
+
+
+
+
+
+    
